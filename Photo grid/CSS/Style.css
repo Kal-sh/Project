@@ -1,0 +1,53 @@
+body{
+    background: black;
+}
+
+.container {
+    padding-top: 2%;
+
+}
+
+.jumbotron {
+    background-image: url(https://images.pexels.com/photos/3979650/pexels-photo-3979650.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+    /* background-image: url(https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+
+}
+
+.jumbotron p {
+    font-weight: 700px;
+}
+
+.pets img {
+    width: 30%;
+    /* height: 10px; */
+    float: center;
+    margin: 1%;
+
+
+}
+
+.container .pets {
+    padding-bottom: 12%;
+}
+
+/* input{
+    display: block;
+} */
+
+.container.reg {
+    width: 50%;
+    margin: 10% auto;
+    background-color: #48cae4;
+    /* float: center; */
+}
+
+#h1 {
+    margin-left: 3%;
+    text-decoration-line: underline;
+    font-family: 'Baloo Tamma 2', cursive;
+    color: white;
+}
