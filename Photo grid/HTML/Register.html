@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/Style.css">
+</head>
+
+<body>
+    
+
+    <form action="" class="container reg" >
+        <div class="form-group">
+            <label for="Pet name">Pet Name</label>
+            <input type="text" id="Pet name"  placeholder="bobby" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Pet age">Age</label>
+            <input type="number"  id="Pet age" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Breed">Breed</label>
+            <input type="text" id="Breed" required>
+        </div>
+        <div class="form-group">
+            <p>Do you prefere dogs or cats?</p>
+        
+            <input type="radio" name="Pet Choice" id="Dogs" value="Dogs" required>
+            <label for="Dogs">Dogs</label>
+
+            <input type="radio" name="Pet Choice" id="Cats" value="Cats" required>
+            <label for="Cats">Cats</label>
+        </div>
+        <p>I agree to the terms and conditions <input type="checkbox"></p>
+        <button type="submit" class="btn btn-success">Submit</button>
+
+
+    </form>
+</body>
+
+</html>
