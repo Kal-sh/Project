@@ -1,0 +1,214 @@
+/* 
+Colors:
+
+light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485 
+
+*/
+/* -----------General---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #777;
+    padding: 2%;
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,
+            rgba(126, 213, 111, 0.5),
+            rgba(40, 180, 133, 0.5)),
+        url(https://images.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+}
+
+
+/* ----------------logo------------- */
+
+.logo-box {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.logo {
+    height: 2%;
+}
+
+/* .logo:hover{
+    animation: moveInleft 2s ease-out;
+} */
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+
+/* --------------Header-------------- */
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 60px;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 500;
+    letter-spacing: 35px;
+    padding-left: 1%;
+    /* animation-name: moveInright;
+    animation-duration: 2s;
+    animation-delay: .5s;
+    animation-timing-function: ease-out; */
+    animation: moveInright 2s ease-out .2s;
+    animation-fill-mode: backwards;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17px;
+    animation: moveInleft 2s ease-out .2s;
+    animation-fill-mode: backwards;
+
+}
+
+
+/* ------------------Animation--------------- */
+
+@keyframes moveInright {
+    0% {
+        opacity: 0;
+        transform: translatey(-80px);
+    }
+
+    50% {
+        transform: translatey(10px);
+    }
+
+    /* 80% {
+        transform: rotatex(180deg);
+    } */
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInleft {
+    0% {
+        opacity: 0;
+        transform: translateX(-70px);
+    }
+
+    50% {
+        transform: translateX(-10px);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes moveInbtn {
+    0% {
+        opacity: 0;
+        transform: translatey(50px);
+    }
+
+    50% {
+        transform: translatey(-10px);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+/* -----Botton----- */
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+.btn:link,
+.btn:visited {
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 100px;
+    transition: all .2s;
+    
+
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    /* opacity: 0; */
+}
+
+.btn::after{
+    display: inline-block;
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn::after{
+    background: #fff;
+}
+
+.btn:hover::after{
+    transform: scalex(1.2) scaleY(1.4);
+    opacity: 0;
+}
+
+.btn-animated{
+    animation: moveInbtn 1.5s ease-in .2s;
+    animation-fill-mode: backwards;
+}
