@@ -1,12 +1,12 @@
 /* 
 Colors:
 
-light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485 
+light green: #7ed56f;
+Medium green: #55c57a;
+Dark green: #28b485;
 
 */
-/* -----------General---------- */
+/* ------ General ----- */
 
 * {
     margin: 0;
@@ -37,7 +37,7 @@ body {
 }
 
 
-/* ----------------logo------------- */
+/* ------- logo ------- */
 
 .logo-box {
     position: absolute;
@@ -63,7 +63,7 @@ body {
 }
 
 
-/* --------------Header-------------- */
+/* --------- Header -------- */
 
 .heading-primary {
     color: #fff;
@@ -97,7 +97,7 @@ body {
 }
 
 
-/* ------------------Animation--------------- */
+/* --------- Animation ---------- */
 
 @keyframes moveInright {
     0% {
@@ -153,7 +153,7 @@ body {
 }
 
 
-/* -----Botton----- */
+/* ----- Button ----- */
 
 .btn-white {
     background-color: #fff;
