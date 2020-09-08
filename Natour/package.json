@@ -1,15 +1,15 @@
 {
   "name": "natours",
   "version": "1.0.0",
-  "description": "landing page for natours",
+  "description": "landing page for natour",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "kaleab",
-  "license": "ISC",
+  "dependencies": {},
   "devDependencies": {
     "node-sass": "^4.14.1"
   },
-  
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css"
+  },
+  "author": "kaleab",
+  "license": "ISC"
 }
