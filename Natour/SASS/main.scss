@@ -10,14 +10,17 @@ Dark green: #28b485;
 $color-primary:#7ed56f;
 $color-primary-light: #55c57a;
 $color-primary-dark: #28b485;
-/* ------ General ----- */
+$color-gray-dark: #777;
+$color-white: #fff;
 
+/* ------ General ----- */
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+    
 }
 
 body {
@@ -25,7 +28,7 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.75;
-    color: #777;
+    color: $color-gray-dark;
     padding: 2%;
 }
 
@@ -72,7 +75,7 @@ body {
 /* --------- Header -------- */
 
 .heading-primary {
-    color: #fff;
+    color: $color-white;
     text-transform: uppercase;
     backface-visibility: hidden;
     margin-bottom: 60px;
@@ -162,8 +165,8 @@ body {
 /* ----- Button ----- */
 
 .btn-white {
-    background-color: #fff;
-    color: #777;
+    background-color: $color-white;
+    color: $color-gray-dark;
 }
 
 .btn:link,
@@ -206,7 +209,7 @@ body {
 }
 
 .btn::after{
-    background: #fff;
+    background: $color-white;
 }
 
 .btn:hover::after{
