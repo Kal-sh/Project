@@ -1,0 +1,32 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,
+            rgba($color-primary-light, 0.5),
+            rgba($color-primary-dark, 0.5)),
+        url(https://images.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+
+    /* ------- logo ------- */
+    &__logo-box {
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
+    }
+
+    &__logo {
+        height: 10rem;
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+    }
+}
