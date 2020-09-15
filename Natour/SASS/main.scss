@@ -12,6 +12,7 @@ $color-primary-light: #55c57a;
 $color-primary-dark: #28b485;
 $color-gray-dark: #777;
 $color-white: #fff;
+$color-black: #000;
 
 /* ------ General ----- */
 *,
@@ -54,13 +55,13 @@ body {
 
 /* ------- logo ------- */
 
-.logo-box {
+.header__logo-box {
     position: absolute;
     top: 1rem;
     left: 2rem;
 }
 
-.logo {
+.header__logo {
     height: 10rem;
 }
 
@@ -68,7 +69,7 @@ body {
     animation: moveInleft 2s ease-out;
 } */
 
-.text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -87,7 +88,7 @@ body {
     margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
     display: block;
     font-size: 6rem;
     font-weight: 500;
@@ -101,7 +102,7 @@ body {
     animation-fill-mode: backwards;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
@@ -170,7 +171,7 @@ body {
 
 /* ----- Button ----- */
 
-.btn-white {
+.btn--white {
     background-color: $color-white;
     color: $color-gray-dark;
 }
@@ -191,13 +192,13 @@ body {
 
 .btn:hover {
     transform: translateY(-.3rem);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
+    box-shadow: 0 .5rem 1rem rgba($color-black, .5);
 
 }
 
 .btn:active {
     transform: translateY(-.1rem);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     /* opacity: 0; */
 }
 
@@ -223,7 +224,7 @@ body {
     opacity: 0;
 }
 
-.btn-animated{
+.btn--animated{
     animation: moveInbtn 1.5s ease-in .2s;
     animation-fill-mode: backwards;
 }
