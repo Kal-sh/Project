@@ -29,8 +29,13 @@
             width: 100%;
             background: var(--color-gray-light-3);
         }
-
+        //old browsers
         &::-webkit-input-placeholder {
+            font-weight: 100;
+            columns: var(--color-gray-light-4);
+        }
+        //new browsers
+        &::input-placeholder {
             font-weight: 100;
             columns: var(--color-gray-light-4);
         }
@@ -343,8 +348,14 @@
         margin-right: .7rem;
         // background-image: url(../img/chevron-thin-right.svg);
         background: var(--color-primary);
+
+        //old browsers
         -webkit-mask-image: url(../img/chevron-thin-right.svg);
         -webkit-mask-size: cover;
+
+        //new browsers
+        mask-image: url(../img/chevron-thin-right.svg);
+        mask-size: cover;
     }
 }
 
