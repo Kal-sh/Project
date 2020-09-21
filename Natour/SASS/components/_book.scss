@@ -1,0 +1,18 @@
+.book {
+    background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%,transparent 50%),url(https://images.pexels.com/photos/1036371/pexels-photo-1036371.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+
+    background-size: cover;
+    background-position: center;
+    border-radius: .5rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .55);
+
+    //test
+    height: 50rem;
+
+
+    &__form {
+        width: 50%;
+        padding: 6rem;
+    }
+
+}
