@@ -7,7 +7,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
+    //New Browsers
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    //Old Browsers
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     position: relative;
 
     /* ------- logo ------- */

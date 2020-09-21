@@ -2,30 +2,29 @@
     background: $color-gray-light-1;
     padding: 25rem 0;
     margin-top: -20vh;
-
 }
 
-.heading-secondary {
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    display: inline-block;
-    background-image: linear-gradient(to right, $color-primary, $color-primary-dark);
+.section-features {
+    padding: 20rem 0;
+    margin-top: -10vh;
+    background-image: linear-gradient(to right bottom,
+            rgba($color-primary-light, 0.8),
+            rgba($color-primary-dark, 0.8)),
+        url(https://images.unsplash.com/photo-1461703048574-9a342517f1bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    // clip-path: polygon(0 8%, 100% 0, 100% 90%, 0 100%);
 
-    //Old Browsers
-    -webkit-background-clip: text;
+    transform: skewY(-5deg);
 
-    //New Browsers
-    background-clip: text;
-    
-    color: transparent;
-    letter-spacing: .2rem;
-    transition: all .2s;
-
-    &:hover{
-        transform: skewX(10deg) scale(1.1);
-        // transform: skewY(2deg) skewX(10deg) scale(1.1);
-        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    &>* {
+        transform: skewY(5deg);
     }
 }
 
+.section-tours {
+    background: $color-gray-light-1;
+    padding: 25rem 0 50rem 0;
+    margin-top: -10rem;
+}

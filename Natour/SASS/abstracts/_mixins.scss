@@ -5,3 +5,16 @@
         clear: both;
     }
 }
+
+@mixin gradient {
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-primary, $color-primary-dark);
+
+    //Old Browsers
+    -webkit-background-clip: text;
+
+    //New Browsers
+    background-clip: text;
+    
+    color: transparent;
+}

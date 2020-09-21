@@ -1,6 +1,10 @@
 .composition {
     position: relative;
 
+    &:hover &__photo:not(:hover) {
+        transform: scale(.9);
+    }
+
     &__photo {
         width: 55%;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
@@ -33,7 +37,4 @@
 
     }
 
-    &:hover &__photo:not(:hover) {
-        transform: scale(.9);
-    }
 }
