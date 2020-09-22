@@ -7,11 +7,37 @@
     <title>Natours | Exciting tours for adventurous people</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/Icon-font.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="../Bootstrap/css/bootstrap.css"> -->
 </head>
 
 <body>
+
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item">
+                    <a href="#section-about" class="navigation__link"><span>01</span> About Natours</a></li>
+                <li class="navigation__item">
+                    <a href="#section-features" class="navigation__link"><span>02</span> Your benefits</a></li>
+                <li class="navigation__item">
+                    <a href="#section-tours" class="navigation__link"><span>03</span> Popular tours</a></li>
+                <li class="navigation__item">
+                    <a href="#section-stories" class="navigation__link"><span>04</span> Stories</a></li>
+                <li class="navigation__item">
+                    <a href="#section-book" class="navigation__link"><span>05</span> Book now</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
     <header class="header">
         <div class="header__logo-box">
             <img class="header__logo" src="img/noun_Logo_2454442.svg" alt="logo" />
@@ -21,13 +47,13 @@
                 <span class="heading-primary--main">Outdoors</span>
                 <span class="heading-primary--sub">is where life happens</span>
             </h1>
-            <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+            <a href="#section-tours" class="btn btn--white btn--animated">Discover our tours</a>
         </div>
 
     </header>
 
     <main>
-        <section class="section-about">
+        <section class="section-about" id="section-about">
             <div class="u-center-text u-margin-bottom-large">
                 <h2 class="heading-secondary">
                     Exciting tours for adventurous people
@@ -76,7 +102,7 @@
 
         </section>
 
-        <section class="section-features">
+        <section class="section-features" id="section-features">
 
 
             <div class="row">
@@ -130,7 +156,7 @@
         </section>
 
 
-        <section class="section-tours">
+        <section class="section-tours" id="section-tours">
             <div class="u-center-text u-margin-bottom-large">
                 <h2 class="heading-secondary">
                     Most popular tours
@@ -168,7 +194,7 @@
                                     <p class="card__price-only">only</p>
                                     <p class="card__price-value">$297</p>
                                 </div>
-                                <a href="#" class="btn btn--white">Book now!</a>
+                                <a href="#popup" class="btn btn--white">Book now!</a>
                             </div>
                         </div>
                     </div>
@@ -204,7 +230,7 @@
                                     <p class="card__price-only">only</p>
                                     <p class="card__price-value">$497</p>
                                 </div>
-                                <a href="#" class="btn btn--white">Book now!</a>
+                                <a href="#popup" class="btn btn--white">Book now!</a>
                             </div>
                         </div>
                     </div>
@@ -240,7 +266,7 @@
                                     <p class="card__price-only">only</p>
                                     <p class="card__price-value">$897</p>
                                 </div>
-                                <a href="#" class="btn btn--white">Book now!</a>
+                                <a href="#popup" class="btn btn--white">Book now!</a>
                             </div>
                         </div>
                     </div>
@@ -253,7 +279,9 @@
 
         </section>
 
-        <section class="section-stories">
+
+        
+        <section class="section-stories" id="section-stories">
             <div class="bg-video">
                 <video class="bg-video__content" autoplay muted loop>
                     <source src="img/Pexels Videos 1550080.webm">
@@ -311,7 +339,7 @@
 
         </section>
 
-        <section class="section-book">
+        <section class="section-book" id="section-book">
             <div class="row">
                 <div class="book">
                     <div class="book__form">
@@ -388,6 +416,24 @@
             </div>
         </div>
     </footer>
+
+    <div class="popup" id="popup">
+        <div class="popup__content">
+            <div class="popup__left">
+                <img src="https://images.unsplash.com/photo-1512704515581-de233a09dae8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="Tour photo" class="popup__img">
+                <img src="https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="Tour photo" class="popup__img">
+            </div>
+            <div class="popup__right">
+                <a href="#section-tours" class="popup__close">&times;</a>
+                <h2 class="heading-secondary u-margin-bottom-small">start booking now</h2>
+                <h3 class="heading-tertiary u-margin-bottom-medium">Important &ndash; Please read this terms before booking</h3>
+                <p class="popup__text">
+                    Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nemo labore fugit. Eligendi perferendis laboriosam minus magnam. Quia, sequi, a possimus adipisci velit quod sunt ducimus error modi cumque eius. Lorem ipsum the dolor sit amet. 
+                </p>
+                <a href="#" class="btn btn--green">Book now</a>
+            </div>
+        </div>
+    </div>
 
     <!--
     <div class="grid-test">
