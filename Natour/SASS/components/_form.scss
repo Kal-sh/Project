@@ -18,6 +18,11 @@
         transition: all .3s;
 
 
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
+
         &:focus {
             outline: none;
             box-shadow: 0 1rem 2rem rgba($color-black, .1);
@@ -40,6 +45,7 @@
         margin-top: .7rem;
         display: block;
         transition: all .3s;
+
     }
 
     &__input:placeholder-shown+&__label {
@@ -51,6 +57,11 @@
     &__radio-group {
         width: 49%;
         display: inline-block;
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
     }
 
     &__radio-input {
@@ -62,6 +73,10 @@
         cursor: pointer;
         position: relative;
         padding-left: 4.5rem;
+
+        @include respond(tab-port) {
+            color: $color-gray-light-1;
+        }
     }
 
     &__radio-button {
@@ -73,7 +88,7 @@
         position: absolute;
         top: -.4rem;
         left: 0;
-
+    
 
         &::after {
             @include abscenter;
