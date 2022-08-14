@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/CS465"
+        android:title="Network Administration" />
+    <item
+        android:id="@+id/CS415"
+        android:title="Focusing Areas in ICT" />
+    <item
+        android:id="@+id/CS468"
+        android:title="Mobile Applications" />
+
+</menu>
