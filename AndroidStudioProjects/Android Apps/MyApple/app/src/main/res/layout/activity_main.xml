@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Constraint Layout Example"
+        android:textSize="22dp"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="32dp" />
+
+    <EditText
+        android:layout_width="317dp"
+        android:layout_height="46dp"
+        android:hint="Name"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="72dp" />
+
+    <EditText
+        android:layout_width="317dp"
+        android:layout_height="43dp"
+        android:hint="Phone"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="130dp" />
+
+    <Button
+        android:layout_width="152dp"
+        android:layout_height="47dp"
+        android:text="Submit"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="193dp" />
+
+    <Button
+        android:layout_width="136dp"
+        android:layout_height="46dp"
+        tools:layout_editor_absoluteX="224dp"
+        android:text="Update"
+        tools:layout_editor_absoluteY="194dp" />
+
+    <Button
+        android:layout_width="318dp"
+        android:layout_height="43dp"
+        android:text="Delete"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="250dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

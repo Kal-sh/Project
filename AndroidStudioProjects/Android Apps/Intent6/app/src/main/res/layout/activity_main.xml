@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:text="Email"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:paddingVertical="60dp"
+        android:textSize="50sp"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:background="@drawable/bg"
+        android:layout_marginBottom="20dp" />
+
+    <EditText
+        android:id="@+id/editRC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edit_text"
+        android:textSize="18sp"
+        android:inputType="textEmailAddress"
+        android:hint="Enter Recipient Email Address"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/editCC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edit_text"
+        android:textSize="18sp"
+        android:inputType="textEmailAddress"
+        android:hint="Enter CC Email Address"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/editBCC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edit_text"
+        android:textSize="18sp"
+        android:inputType="textEmailAddress"
+        android:hint="Enter BCC Email Address"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/editSub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edit_text"
+        android:textSize="18sp"
+        android:inputType="textEmailSubject"
+        android:hint="Enter Your Subject Here"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/editCon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edit_text"
+        android:textSize="18sp"
+        android:hint="Enter Your Message Here"
+        android:lines="6"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="25dp"
+        android:textSize="20dp"
+        android:textColor="#fafafa"
+        android:background="@drawable/button_bg"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
