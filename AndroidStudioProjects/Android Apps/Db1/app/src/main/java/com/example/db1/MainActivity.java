@@ -54,6 +54,23 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db.deleteData(name);
+                Toast.makeText(MainActivity.this, "Deleted the Name", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnDeleteAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db.deleteAll();
+                Toast.makeText(MainActivity.this,"DeleteD All Records", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         btnRead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

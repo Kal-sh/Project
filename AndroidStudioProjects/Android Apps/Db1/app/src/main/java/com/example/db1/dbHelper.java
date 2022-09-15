@@ -45,6 +45,19 @@ public class dbHelper extends SQLiteOpenHelper {
         }else
             Toast.makeText(context, "Data saved successfully", Toast.LENGTH_SHORT).show();
     }
+
+    public void deleteData(String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME, "Name=?", new String[]{name});
+        db.close();
+    }
+
+    public void deleteAll(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME,null,null);
+        db.close();
+    }
+
     public void updateData(String id, String name, String num){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -70,4 +83,5 @@ public class dbHelper extends SQLiteOpenHelper {
         Cursor cursor = db.query(TABLE_NAME, columns, "ID = ?", new String[]{id}, null, null, null,null);
         return cursor;
     }
+
 }
