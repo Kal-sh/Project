@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Signup | Hilcoe Exam bank</title>
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <!-- Signup Container -->
+        <div class="row border rounded-5 p-3 bg-white shadow box-area">
+            <!-- Left Box -->
+            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #103cbe;">
+                <!-- Graduation Hat Icon -->
+                <i class="fas fa-graduation-cap fa-5x text-white mb-3"></i>
+                <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">HiLCoE Exam Bank</p>
+                <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Streamlining Success, One Exam at a Time.</small>
+            </div>
+
+            <!-- Right Box -->
+            <div class="col-md-6 right-box">
+                <div class="row align-items-center">
+                    <div class="header-text mb-4">
+                        <h2>Create an Account</h2>
+                        <p>We are excited to have you join us!</p>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" id="signupFirstNameInput" class="form-control form-control-lg bg-light fs-6" placeholder="First Name">
+                        <!-- Add the Last Name field next to the First Name field without labels -->
+                        <input type="text" id="signupLastNameInput" class="form-control form-control-lg bg-light fs-6" placeholder="Last Name">
+                    </div>
+                    <!-- Continue with the rest of the form ... -->
+                    <div class="input-group mb-3">
+                        <input type="text" id="signupUsernameInput" class="form-control form-control-lg bg-light fs-6" placeholder="Username">
+                    </div>
+                    <div class="input-group mb-1">
+                        <input type="password" id="signupPasswordInput" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
+                    </div>
+                    <div class="input-group mb-5 d-flex justify-content-between">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="formCheck">
+                            <label for="formCheck" class="form-check-label text-secondary"><small>Remember Me</small></label>
+                        </div>
+                        <div class="forgot">
+                            <small><a href="#">Forgot Password?</a></small>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <button id="signupButton" class="btn btn-lg btn-primary w-100 fs-6">Sign Up</button>
+                    </div>
+
+                    <div class="row">
+                        <small>Already have an account? <a href="login.html">Login</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="signupWarning" class="alert alert-danger" style="display: none; width: 100%; text-align: center;"></div>
+        </div>
+    </div>
+
+    <!-- Common JavaScript for both login and sign-up -->
+    <script>
+        document.getElementById('signupButton').addEventListener('click', postData);
+        
+        async function postData(event) {
+            event.preventDefault();
+        
+            const firstName = document.getElementById('signupFirstNameInput').value;
+            const lastName = document.getElementById('signupLastNameInput').value;
+            const username = document.getElementById('signupUsernameInput').value;
+            const password = document.getElementById('signupPasswordInput').value;
+        
+            if (!firstName || !lastName || !username || !password) {
+                document.getElementById('signupWarning').innerText = 'All fields are required.';
+                document.getElementById('signupWarning').style.display = 'block';
+                return;
+            }
+        
+            const data = { firstName, lastName, username, password };
+        
+            try {
+                const response = await fetch('http://localhost:3000/insertData', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                const responseData = await response.json();
+        
+                if (responseData.success) {
+                    console.log(responseData.message);
+                } else {
+                    console.error(responseData.message);
+                    document.getElementById('signupWarning').innerText = 'Error creating an account. Please try again.';
+                    document.getElementById('signupWarning').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        </script>
+        </body>
+</html>
