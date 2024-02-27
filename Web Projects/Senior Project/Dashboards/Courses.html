@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, user-scalable=0"
+		/>
+		<title>Courses</title>
+
+		<link rel="shortcut icon" href="assets/img/favicon.png" />
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="assets/plugins/bootstrap/css/bootstrap.min.css"
+		/>
+
+		<link rel="stylesheet" href="assets/plugins/feather/feather.css" />
+
+		<link rel="stylesheet" href="assets/plugins/icons/flags/flags.css" />
+
+		<link
+			rel="stylesheet"
+			href="assets/plugins/fontawesome/css/fontawesome.min.css"		/>
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+
+		<link
+			rel="stylesheet"
+			href="assets/plugins/datatables/datatables.min.css"	/>
+
+		<link rel="stylesheet" href="assets/css/style.css" />
+	
+
+	</head>
+	<body>
+		<div class="main-wrapper">
+			<div class="header">
+				<div class="header-left">
+					<a href="index.html" class="logo">
+						<img src="assets/img/photo_2020-09-23_16-29-26.jpg" alt="Logo" />
+					</a>
+					<a href="index.html" class="logo logo-small">
+						<img
+							src="assets/img/photo_2020-09-23_16-29-26.jpg"
+							alt="Logo"
+							width="30"
+							height="30"
+						/>
+					</a>
+				</div>
+
+				<div class="menu-toggle">
+					<a href="javascript:void(0);" id="toggle_btn">
+						<i class="fas fa-bars"></i>
+					</a>
+				</div>
+
+				<div class="top-nav-search">
+					
+				</div>
+
+				<a class="mobile_btn" id="mobile_btn">
+					<i class="fas fa-bars"></i>
+				</a>
+
+				<ul class="nav user-menu">
+
+					<li class="nav-item dropdown noti-dropdown me-2">
+						<a
+							href="#"
+							class="dropdown-toggle nav-link header-nav-list"
+							data-bs-toggle="dropdown"
+						>
+							<img src="assets/img/icons/header-icon-05.svg" alt="" />
+						</a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span class="notification-title">Notifications</span>
+								<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+							</div>
+							<div class="noti-content">
+								<ul class="notification-list">
+									<li class="notification-message">
+										<a href="#">
+											<div class="media d-flex">
+												<span class="avatar avatar-sm flex-shrink-0">
+													<img
+														class="avatar-img rounded-circle"
+														alt="User Image"
+														src="assets/img/profiles/avatar-02.jpg"
+													/>
+												</span>
+												<div class="media-body flex-grow-1">
+													<p class="noti-details">
+														<span class="noti-title">Carlson Tech</span> has
+														approved
+														<span class="noti-title">your estimate</span>
+													</p>
+													<p class="noti-time">
+														<span class="notification-time">4 mins ago</span>
+													</p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media d-flex">
+												<span class="avatar avatar-sm flex-shrink-0">
+													<img
+														class="avatar-img rounded-circle"
+														alt="User Image"
+														src="assets/img/profiles/avatar-11.jpg"
+													/>
+												</span>
+												<div class="media-body flex-grow-1">
+													<p class="noti-details">
+														<span class="noti-title"
+															>International Software Inc</span
+														>
+														has sent you a invoice in the amount of
+														<span class="noti-title">$218</span>
+													</p>
+													<p class="noti-time">
+														<span class="notification-time">6 mins ago</span>
+													</p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media d-flex">
+												<span class="avatar avatar-sm flex-shrink-0">
+													<img
+														class="avatar-img rounded-circle"
+														alt="User Image"
+														src="assets/img/profiles/avatar-17.jpg"
+													/>
+												</span>
+												<div class="media-body flex-grow-1">
+													<p class="noti-details">
+														<span class="noti-title">John Hendry</span> sent a
+														cancellation request
+														<span class="noti-title">Apple iPhone XR</span>
+													</p>
+													<p class="noti-time">
+														<span class="notification-time">8 mins ago</span>
+													</p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media d-flex">
+												<span class="avatar avatar-sm flex-shrink-0">
+													<img
+														class="avatar-img rounded-circle"
+														alt="User Image"
+														src="assets/img/profiles/avatar-13.jpg"
+													/>
+												</span>
+												<div class="media-body flex-grow-1">
+													<p class="noti-details">
+														<span class="noti-title">Mercury Software Inc</span>
+														added a new product
+														<span class="noti-title">Apple MacBook Pro</span>
+													</p>
+													<p class="noti-time">
+														<span class="notification-time">12 mins ago</span>
+													</p>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="#">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+
+					<li class="nav-item zoom-screen me-2">
+						<a href="#" class="nav-link header-nav-list">
+							<img src="assets/img/icons/header-icon-04.svg" alt="" />
+						</a>
+					</li>
+
+					<li class="nav-item dropdown has-arrow new-user-menus">
+						<a
+							href="#"
+							class="dropdown-toggle nav-link"
+							data-bs-toggle="dropdown"
+						>
+							<span class="user-img">
+								<img
+									class="rounded-circle"
+									src="assets/img/profiles/avatar-01.jpg"
+									width="31"
+									alt="Soeng Souy"
+								/>
+								<div class="user-text">
+									<h6 id="loggedInUsername">Soeng Souy</h6>
+									<p class="text-muted mb-0" id="loggedInUserRole">Administrator</p>
+								</div>
+							</span>
+						</a>
+						<div class="dropdown-menu">
+							<div class="user-header">
+								<div class="avatar avatar-sm">
+									<img
+										src="assets/img/profiles/avatar-01.jpg"
+										alt="User Image"
+										class="avatar-img rounded-circle"
+									/>
+								</div>
+								<div class="user-text">
+									<h6 id="Fullname">Soeng Souy</h6>
+									<p class="text-muted mb-0" id="loggedInUserRoleDropdown">Administrator</p>
+								</div>
+							</div>
+							<a class="dropdown-item" href="profile.html">My Profile</a>
+							<a class="dropdown-item" href="inbox.html">Inbox</a>
+							<a class="dropdown-item" href="login.html">Logout</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="sidebar" id="sidebar">
+				<div class="sidebar-inner slimscroll">
+					<div id="sidebar-menu" class="sidebar-menu">
+						<ul>
+							<li class="menu-title">
+								<span>Main Menu</span>
+							</li>
+							<li class="submenu">
+								<a href="#"
+									><i class="feather-grid"></i> <span> Dashboard</span>
+									<span class="menu-arrow"></span
+								></a>
+								<ul>
+									
+									 <li>
+										<a href="teacher-dashboard.html">Teacher Dashboard</a>
+									</li>
+								
+								</ul>
+							</li>
+							<li class="submenu active">
+								<a href="#"
+									><i class="fas fa-graduation-cap"></i> <span> Students</span>
+									<span class="menu-arrow"></span
+								></a>
+								<ul>
+									<li>
+										<a href="students.html" class="active">Student List</a>
+									</li>
+									
+								</ul>
+							</li>
+							
+						
+							<li class="submenu">
+								<a href="#"
+									><i class="fas fa-book-reader"></i> <span> Courses</span>
+									<span class="menu-arrow"></span
+								></a>
+								<ul>
+									<li><a href="Courses.html">Course List</a></li>
+							
+								</ul>
+							</li>
+							
+							
+							
+							<li>
+								<a href="exam.html"
+									><i class="fas fa-clipboard-list"></i>
+									<span>Exam list</span></a
+								>
+							</li>
+						
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="page-wrapper">
+				<div class="content container-fluid">
+					<div class="page-header">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="page-sub-header">
+									<h3 class="page-title">Courses</h3>
+									<ul class="breadcrumb">
+										<li class="breadcrumb-item">
+											<a href="students.html">Courses</a>
+										</li>
+										<li class="breadcrumb-item active">Course List</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="student-group-form">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="form-group">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Search by Course Code ..."
+                                        id="searchByCourseCodeInput"
+                                        oninput="searchCourses()"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="form-group">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Search by Name ..."
+                                        id="searchByNameInput"
+                                        oninput="searchCourses()"
+                                    />
+                                </div>
+                            </div>
+                    
+                            <div class="col-lg-2">
+                                <div class="search-student-btn">
+                                    <button type="btn" class="btn btn-primary" onclick="searchCourses()">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="card card-table comman-shadow">
+								<div class="card-body">
+									<div class="page-header">
+										<div class="row align-items-center">
+											<div class="col">
+												<h3 class="page-title">Courses</h3>
+											</div>
+											<div
+												class="col-auto text-end float-end ms-auto download-grp"
+											>
+												
+												
+												
+											
+											</div>
+										</div>
+									</div>
+                                    <div class="table-responsive">
+                                        <table class="table border-0 star-student table-hover table-center mb-0 datatable table-striped" id="studentListTable">
+                                            <thead class="student-thread">
+                                                <tr>
+                                                    <th>
+                                                        <div class="form-check check-tables">
+                                                            <input class="form-check-input" type="checkbox" value="something" />
+                                                        </div>
+                                                    </th>
+                                                    <th>Course Code</th>
+                                                    <th>Name</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="studentListTableBody">
+                                                <!-- Student list will be dynamically populated here -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <script>
+                                       let originalCourseData = [];
+                                       
+
+// Fetch course list from the server
+fetch('http://localhost:3000/getCourses')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // Log the fetched data
+        originalCourseData = [...data.courses];
+        populateCourseTable(data.courses);
+    })
+    .catch(error => console.error('Error fetching course list:', error));
+
+// Function to populate the course table
+const populateCourseTable = courses => {
+    const studentListTableBody = document.getElementById('studentListTableBody');
+    studentListTableBody.innerHTML = ''; // Clear existing rows
+
+    courses.forEach(course => {
+        const row = document.createElement('tr');
+
+        // Checkbox column
+        const checkboxCell = document.createElement('td');
+        const checkbox = document.createElement('input');
+        checkbox.className = 'form-check-input';
+        checkbox.type = 'checkbox';
+        checkbox.value = 'something'; // You may need to set this dynamically based on course data
+        checkboxCell.appendChild(checkbox);
+        row.appendChild(checkboxCell);
+
+        // Course Code column
+        const courseCodeCell = document.createElement('td');
+        courseCodeCell.textContent = course.courseCode;
+        row.appendChild(courseCodeCell);
+
+        // Name column
+        const nameCell = document.createElement('td');
+        nameCell.textContent = course.courseName;
+        row.appendChild(nameCell);
+
+        studentListTableBody.appendChild(row);
+    });
+
+    // Initialize DataTables after dynamically adding content
+    $('#studentListTable').DataTable();
+};
+
+// Function to filter courses based on search inputs
+const searchCourses = () => {
+    const searchByCourseCodeInput = document.getElementById('searchByCourseCodeInput').value.toLowerCase();
+    const searchByNameInput = document.getElementById('searchByNameInput').value.toLowerCase();
+
+    const filteredCourses = originalCourseData.filter(course => {
+        const courseCodeMatches = course.courseCode.toLowerCase().includes(searchByCourseCodeInput);
+        const nameMatches = course.courseName.toLowerCase().includes(searchByNameInput);
+
+        return courseCodeMatches && nameMatches;
+    });
+
+    populateCourseTable(filteredCourses);
+};
+
+                                    </script>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				
+			</div>
+		</div>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" type="text/css" href="path/to/datatables.min.css"/>
+<script type="text/javascript" src="path/to/datatables.min.js"></script>
+
+
+		<script src="teacher-dashboard script.js"></script>
+        
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="DataTables-master\media\css/dataTables.bootstrap.min.css"/>
+		<script type="text/javascript" src="DataTables-master\media\js/dataTables.dataTables.min.js"></script>
+
+		<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+		<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+		<script src="assets/js/feather.min.js"></script>
+
+		<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<script src="assets/plugins/datatables/datatables.min.js"></script>
+
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>

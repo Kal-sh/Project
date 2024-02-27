@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="dashboard style.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="#">Exam Bank</a>
+        </div>
+
+        <div class="header-icons">
+            <i class="fas fa-bell"></i>
+            <div class="account">
+                <h4 id="loggedInUsername">username</h4>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <nav>
+            <div class="side_navbar">
+                <span>Main Menu</span>
+                <a href="#" class="active" onclick="switchTab('Dashboard')">Dashboard</a>
+                <a href="#" onclick="switchTab('Profile')">Profile</a>
+                <a href="#" onclick="switchTab('Courses')">Courses</a>
+                <a href="#" onclick="switchTab('My Account')">My Account</a>
+                <a href="#" onclick="switchTab('Teachers')">Teachers</a>
+                <a href="#" onclick="switchTab('Uploads')">Uploads</a>
+            </div>
+        </nav>
+
+        <div class="main-body">
+            <h2 id="tabLabel">Dashboard</h2>
+            <div class="promo_card" id="dashboardContent">
+                <h1>Welcome to Hilcoe Exam Bank</h1>
+                <span>Streamlining Success, One Exam at a Time.</span>
+                <button onclick="learnMore()">Learn More</button>
+            </div>
+
+            <div class="history_lists" id="profileContent" style="display: none;">
+                <!-- Content for Profile tab -->
+
+                <div id="userInformation" class="user-information">
+                    <!-- Display user information here -->
+                </div>
+            </div>
+
+            <div class="history_lists" id="CourseContent" style="display: none;">
+                <!-- Content for Course tab -->
+                <h2></h2>
+            </div>
+
+            <div class="history_lists" id="myAccountContent" style="display: none;">
+              <!-- Content for My Account tab -->
+              <div id="passwordFields" class="password-fields" style="margin-bottom: 10px;">
+                  <!-- Password fields for Change Password -->
+                  <div class="form-group">
+                      <label for="oldPasswordInput">Old Password </label>
+                      <input type="password" class="form-control" id="oldPasswordInput" placeholder="Old Password">
+                  </div>
+                  <div class="form-group">
+                      <label for="newPasswordInput">New Password</label>
+                      <input type="password" class="form-control" id="newPasswordInput" placeholder="New Password">
+                  </div>
+              </div>
+              <button onclick="changePassword()">Change Password</button>
+              <button onclick="savePassword()" id="savePasswordBtn" style="display: none;">Save</button>
+          </div>
+          
+          <div class="history_lists" id="teachersContent" style="display: none;">
+              <!-- Content for Teachers tab -->
+              <button onclick="addTeacherAccount()">Add Teacher Account</button>
+              <div id="teacherFields" class="password-fields" style="margin-bottom: 10px; display: none;">
+                  <!-- Teacher fields for Add Teacher Account -->
+                  <div class="form-group">
+                      <label for="teacherUsernameInput">Teacher Username</label>
+                      <input type="text" class="form-control" id="teacherUsernameInput" placeholder="Username">
+                  </div>
+                  <div class="form-group">
+                      <label for="teacherPasswordInput">Teacher Password</label>
+                      <input type="password" class="form-control" id="teacherPasswordInput" placeholder="Password">
+                  </div>
+                  <!-- Save button for Teachers tab -->
+                  <button onclick="saveTeacherAccount()" id="saveTeacherBtn" style="display: none;">Save</button>
+              </div>
+          </div>
+          
+
+            <div class="history_lists" id="uploadsContent" style="display: none;">
+                <h2>Uploads Content</h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Fetch user information from localStorage when the page loads
+        const storedUser = localStorage.getItem('loggedInUser');
+
+        if (storedUser) {
+            const { username, role } = JSON.parse(storedUser);
+
+            // Display user information in the profile tab
+            const userInformation = document.getElementById('userInformation');
+            userInformation.innerHTML = `<p>Username: ${username}</p>
+                                    <p>Role: ${role}</p>`;
+
+            // Update the logged-in username in the header
+            const loggedInUsername = document.getElementById('loggedInUsername');
+            loggedInUsername.innerText = username;
+        } else {
+            console.error('No user information found.');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fetch user information when the page loads
+            const storedUser = localStorage.getItem('loggedInUser');
+
+            if (storedUser) {
+                const { username, role } = JSON.parse(storedUser);
+
+                fetch(`http://localhost:3000/getUserInfo?username=${username}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Success:', data);
+                        updateUserInfo(data); // Update user information
+                    })
+                    .catch(error => {
+                        console.error('Error fetching user information:', error);
+                    });
+            } else {
+                console.error('No user information found.');
+            }
+        });
+
+        function updateUserInfo(userInfo) {
+            // Display user information in the profile tab
+            const userInformation = document.getElementById('userInformation');
+            userInformation.innerHTML = `<p>${userInfo.firstName} ${userInfo.lastName}</p>
+                                    <p>Username: ${userInfo.username}</p>
+                                    <p>Role: ${userInfo.role}</p>`;
+
+            // Update the logged-in username in the header
+            const loggedInUsername = document.getElementById('loggedInUsername');
+            loggedInUsername.innerText = userInfo.username;
+        }
+
+        function handleLogin() {
+            const usernameInput = document.getElementById('usernameInput').value;
+            const passwordInput = document.getElementById('passwordInput').value;
+
+            fetch('http://localhost:3000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: usernameInput,
+                    password: passwordInput,
+                }),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Login success:', data);
+                    const { username, role } = data;
+                    localStorage.setItem('loggedInUser', JSON.stringify({ username, role }));
+                    window.location.href = '/admin-dashboard.html'; // Redirect to admin dashboard
+                })
+                .catch(error => {
+                    console.error('Login error:', error);
+                    
+                    // Handle login error, e.g., display a message to the user
+                });
+        }
+
+        function switchTab(tabName) {
+            document.getElementById('tabLabel').innerText = tabName;
+
+            // Show or hide main content based on tab
+            const dashboardContent = document.getElementById('dashboardContent');
+            const profileContent = document.getElementById('profileContent');
+            const CourseContent = document.getElementById('CourseContent');
+            const myAccountContent = document.getElementById('myAccountContent');
+            const teachersContent = document.getElementById('teachersContent');
+            const uploadsContent = document.getElementById('uploadsContent');
+
+            // Ensure all content is initially hidden
+            dashboardContent.style.display = 'none';
+            profileContent.style.display = 'none';
+            CourseContent.style.display = 'none';
+            myAccountContent.style.display = 'none';
+            teachersContent.style.display = 'none';
+            uploadsContent.style.display = 'none';
+
+            // Update the switch case for 'Uploads'
+            switch (tabName) {
+                case 'Dashboard':
+                    dashboardContent.style.display = 'block';
+                    break;
+                case 'Profile':
+                    profileContent.style.display = 'block';
+                    break;
+                case 'Courses':
+                    CourseContent.style.display = 'block';
+                    break;
+                case 'My Account':
+                    myAccountContent.style.display = 'block';
+                    break;
+                case 'Teachers':
+                    teachersContent.style.display = 'block';
+                    break;
+                case 'Uploads':
+                    uploadsContent.style.display = 'block';
+                    break;
+            }
+        }
+
+        function learnMore() {
+            // ... (unchanged code)
+        }
+
+        function changePassword() {
+            // Toggle the display of the password fields
+            const passwordFields = document.getElementById('passwordFields');
+            passwordFields.style.display = passwordFields.style.display === 'none' ? 'block' : 'none';
+
+            // Show the Save button
+            const savePasswordBtn = document.getElementById('savePasswordBtn');
+            savePasswordBtn.style.display = 'block';
+        }
+
+        function savePassword() {
+            // Add your logic to save the password here
+            const oldPassword = document.getElementById('oldPasswordInput').value;
+            const newPassword = document.getElementById('newPasswordInput').value;
+
+            // Perform any necessary validation or AJAX requests here
+
+            // For demonstration purposes, let's log the values to the console
+            console.log("Saving Password:");
+            console.log("Old Password: " + oldPassword);
+            console.log("New Password: " + newPassword);
+
+            // Update the password in the database
+            const storedUser = JSON.parse(localStorage.getItem('loggedInUser'));
+            const username = storedUser.username;
+
+            updatePassword(username, newPassword);
+
+            // Hide the password fields and Save button after saving
+            const passwordFields = document.getElementById('passwordFields');
+            passwordFields.style.display = 'none';
+
+            const savePasswordBtn = document.getElementById('savePasswordBtn');
+            savePasswordBtn.style.display = 'none';
+        }
+
+        function addTeacherAccount() {
+            // Toggle the display of the teacher fields
+            const teacherFields = document.getElementById('teacherFields');
+            teacherFields.style.display = teacherFields.style.display === 'none' ? 'block' : 'none';
+            // Display the Save button
+            const saveTeacherBtn = document.getElementById('saveTeacherBtn');
+            saveTeacherBtn.style.display = 'block';
+        }
+
+        function saveTeacherAccount() {
+            // Add your logic to save the teacher account here
+            // For example, you can retrieve the values from the input fields
+            const teacherUsername = document.getElementById('teacherUsernameInput').value;
+            const teacherPassword = document.getElementById('teacherPasswordInput').value;
+
+            // Perform any necessary validation or AJAX requests here
+
+            // For demonstration purposes, let's log the values to the console
+            console.log("Saving Teacher Account:");
+            console.log("Username: " + teacherUsername);
+            console.log("Password: " + teacherPassword);
+
+            // Save the teacher account in the database
+            fetch('http://localhost:3000/addteacher', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: teacherUsername,
+                    password: teacherPassword,
+                }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Teacher account saved:', data);
+                    // Optionally, you can provide feedback to the user that the teacher account was saved
+
+                    // Hide the teacher fields and Save button after saving
+                    const teacherFields = document.getElementById('teacherFields');
+                    teacherFields.style.display = 'none';
+
+                    const saveTeacherBtn = document.getElementById('saveTeacherBtn');
+                    saveTeacherBtn.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Error saving teacher account:', error);
+                    // Handle save teacher account error, e.g., display a message to the user
+                });
+        }
+
+        function updatePassword(username, newPassword) {
+            fetch('http://localhost:3000/updatePassword', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: username,
+                    newPassword: newPassword,
+                }),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Password update success:', data);
+                    // Optionally, you can provide feedback to the user that the password was updated
+                })
+                .catch(error => {
+                    console.error('Error updating password:', error);
+                    // Handle update password error, e.g., display a message to the user
+                });
+        }
+    </script>
+</body>
+
+</html>
