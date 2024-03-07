@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, user-scalable=0"
+		/>
+		<title>HiLCoE- Students</title>
+
+		<link rel="shortcut icon" href="assets/img/photo_2020-09-23_16-29-26.jpg" />
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="assets/plugins/bootstrap/css/bootstrap.min.css"
+		/>
+
+		<link rel="stylesheet" href="assets/plugins/feather/feather.css" />
+
+		<link rel="stylesheet" href="assets/plugins/icons/flags/flags.css" />
+
+		<link
+			rel="stylesheet"
+			href="assets/plugins/fontawesome/css/fontawesome.min.css"
+		/>
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+
+		<link
+			rel="stylesheet"
+			href="assets/plugins/datatables/datatables.min.css"
+		/>
+
+		<link rel="stylesheet" href="assets/css/style.css" />
+	</head>
+	<body>
+		<div class="main-wrapper">
+			<div class="header">
+				<div class="header-left">
+					<a href="index.html" class="logo">
+						<img src="assets/img/photo_2020-09-23_16-29-26.jpg" alt="Logo" />
+					</a>
+					<a href="index.html" class="logo logo-small">
+						<img
+							src="assets/img/photo_2020-09-23_16-29-26.jpg"
+							alt="Logo"
+							width="30"
+							height="30"
+						/>
+					</a>
+				</div>
+
+				<div class="menu-toggle">
+					<a href="javascript:void(0);" id="toggle_btn">
+						<i class="fas fa-bars"></i>
+					</a>
+				</div>
+
+				<div class="top-nav-search"></div>
+
+				<a class="mobile_btn" id="mobile_btn">
+					<i class="fas fa-bars"></i>
+				</a>
+
+				<ul class="nav user-menu">
+					<li class="nav-item dropdown has-arrow new-user-menus">
+						<a
+							href="#"
+							class="dropdown-toggle nav-link"
+							data-bs-toggle="dropdown"
+						>
+							<span class="user-img">
+								<img
+									class="rounded-circle"
+									src="assets/img/profiles/avatar-01.jpg"
+									width="31"
+									alt="Soeng Souy"
+								/>
+								<div class="user-text">
+									<h6 id="loggedInUsername">Soeng Souy</h6>
+									<p class="text-muted mb-0" id="loggedInUserRole">
+										Administrator
+									</p>
+								</div>
+							</span>
+						</a>
+						<div class="dropdown-menu">
+							<div class="user-header">
+								<div class="avatar avatar-sm">
+									<img
+										src="assets/img/profiles/avatar-01.jpg"
+										alt="User Image"
+										class="avatar-img rounded-circle"
+									/>
+								</div>
+								<div class="user-text">
+									<h6 id="Fullname">Soeng Souy</h6>
+									<p class="text-muted mb-0" id="loggedInUserRoleDropdown">
+										Administrator
+									</p>
+								</div>
+							</div>
+							<a class="dropdown-item" href="profile.html">My Profile</a>
+							<a class="dropdown-item" href="inbox.html">Inbox</a>
+							<a class="dropdown-item" href="login.html">Logout</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="sidebar" id="sidebar">
+				<div class="sidebar-inner slimscroll">
+					<div id="sidebar-menu" class="sidebar-menu">
+						<ul>
+							<li class="menu-title">
+								<span>Main Menu</span>
+							</li>
+							<li class="submenu">
+								<a href="#"
+									><i class="feather-grid"></i> <span> Dashboard</span>
+									<span class="menu-arrow"></span
+								></a>
+								<ul>
+									<li>
+										<a href="admin dash.html">Admin Dashboard</a>
+									</li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#"
+									><i class="fas fa-graduation-cap"></i> <span> Students</span>
+									<span class="menu-arrow"></span
+								></a>
+								<ul>
+									<li>
+										<a href="students.html" class="active">Student List</a>
+									</li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#"
+									><i class="fas fa-chalkboard-teacher"></i>
+									<span> Accounts</span> <span class="menu-arrow"></span
+								></a>
+								<ul>
+									<li><a href="teachers.html">Teachers List</a></li>
+									<li><a href="add-teacher.html">Add Teacher</a></li>
+									<li><a href="Admin.html">Admin List</a></li>
+									<li><a href="add-Admin.html">Add Admin </a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#"
+									><i class="fas fa-book-reader"></i> <span> Courses</span>
+									<span class="menu-arrow"></span
+								></a>
+								<ul>
+									<li><a href="Courses.html">Course List</a></li>
+									<li><a href="add-course.html">Add Course</a></li>
+								</ul>
+							</li>
+
+							<li>
+								<a href="exam.html"
+									><i class="fas fa-clipboard-list"></i>
+									<span>Exam list</span></a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="page-wrapper">
+				<div class="content container-fluid">
+					<div class="page-header">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="page-sub-header">
+									<h3 class="page-title">Students</h3>
+									<ul class="breadcrumb">
+										<li class="breadcrumb-item">
+											<a href="students.html">Student</a>
+										</li>
+										<li class="breadcrumb-item active">All Students</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="student-group-form">
+						<div class="row">
+							<div class="col-lg-3 col-md-6">
+								<div class="form-group">
+									<input
+										type="text"
+										class="form-control"
+										placeholder="Search by ID ..."
+										id="searchByIdInput"
+										oninput="searchStudents()"
+									/>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6">
+								<div class="form-group">
+									<input
+										type="text"
+										class="form-control"
+										placeholder="Search by Name ..."
+										id="searchByNameInput"
+										oninput="searchStudents()"
+									/>
+								</div>
+							</div>
+
+							<div class="col-lg-2">
+								<div class="search-student-btn">
+									<button
+										type="btn"
+										class="btn btn-primary"
+										onclick="searchStudents()"
+									>
+										Search
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="card card-table comman-shadow">
+								<div class="card-body">
+									<div class="page-header">
+										<div class="row align-items-center">
+											<div class="col">
+												<h3 class="page-title">Students</h3>
+											</div>
+											<div
+												class="col-auto text-end float-end ms-auto download-grp"
+											></div>
+										</div>
+									</div>
+
+									<div class="table-responsive">
+										<table
+											class="table border-0 star-student table-hover table-center mb-0 datatable table-striped"
+											id="studentListTable"
+										>
+											<thead class="student-thread">
+												<tr>
+													<th>
+														<div class="form-check check-tables">
+															<input
+																class="form-check-input"
+																type="checkbox"
+																value="something"
+															/>
+														</div>
+													</th>
+													<th>ID</th>
+													<th>Name</th>
+												</tr>
+											</thead>
+											<tbody id="studentListTableBody">
+												<!-- Student list will be dynamically populated here -->
+											</tbody>
+										</table>
+									</div>
+
+									<script>
+										let originalData = [];
+
+										// Fetch student list from the server
+										fetch('http://localhost:3000/student-list')
+											.then((response) => response.json())
+											.then((data) => {
+												console.log(data); // Log the fetched data
+												originalData = [...data];
+												populateTable(data);
+											})
+											.catch((error) =>
+												console.error('Error fetching student list:', error)
+											);
+
+										// Function to populate the table with student data
+										const populateTable = (students) => {
+											const studentListTableBody = document.getElementById(
+												'studentListTableBody'
+											);
+											studentListTableBody.innerHTML = ''; // Clear existing rows
+
+											students.forEach((student) => {
+												const row = document.createElement('tr');
+
+												// Checkbox column
+												const checkboxCell = document.createElement('td');
+												const checkbox = document.createElement('input');
+												checkbox.className = 'form-check-input';
+												checkbox.type = 'checkbox';
+												checkbox.value = 'something'; // You may need to set this dynamically based on student data
+												checkboxCell.appendChild(checkbox);
+												row.appendChild(checkboxCell);
+
+												// ID column
+												const idCell = document.createElement('td');
+												idCell.textContent = student.hilcoeID || ''; // Replace with the actual property of your student data
+												row.appendChild(idCell);
+
+												// Name column
+												const nameCell = document.createElement('td');
+												// Assuming your student object has 'firstName' and 'lastName' properties
+												const fullName = `${student.firstName || ''} ${
+													student.lastName || ''
+												}`;
+												nameCell.textContent = fullName; // Set the text content with the full name
+												row.appendChild(nameCell);
+
+												studentListTableBody.appendChild(row);
+											});
+
+											// Initialize DataTables after dynamically adding content
+											$('#studentListTable').DataTable();
+										};
+
+										// Function to filter students based on search inputs
+										const searchStudents = () => {
+											const searchByIdInput = document
+												.getElementById('searchByIdInput')
+												.value.toLowerCase();
+											const searchByNameInput = document
+												.getElementById('searchByNameInput')
+												.value.toLowerCase();
+
+											const filteredStudents = originalData.filter(
+												(student) => {
+													const idMatches = student.hilcoeID
+														.toLowerCase()
+														.includes(searchByIdInput);
+													const nameMatches =
+														`${student.firstName} ${student.lastName}`
+															.toLowerCase()
+															.includes(searchByNameInput);
+
+													return idMatches && nameMatches;
+												}
+											);
+
+											populateTable(filteredStudents);
+										};
+									</script>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="teacher-dashboard script.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="DataTables-master\media\css/dataTables.bootstrap.min.css"
+		/>
+		<script
+			type="text/javascript"
+			src="DataTables-master\media\js/dataTables.dataTables.min.js"
+		></script>
+
+		<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+		<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+		<script src="assets/js/feather.min.js"></script>
+
+		<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<script src="assets/plugins/datatables/datatables.min.js"></script>
+
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>
